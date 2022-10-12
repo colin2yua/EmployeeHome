@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.employeehome.mapper.UserMapper">
+    <!-- 插入注册的用户 -->
+    <insert id="register" parameterType="User" >
+  		insert into user (loginname,password,status,username,email)
+  		values (#{loginname},#{password},#{status},#{username},#{email})
+	</insert>
+
+    <!-- 存储头像 -->
+    <update id="photoUpload" parameterType="User">
+		update user set photo = #{photo} where loginname = #{loginname} OR email= #{email}
+	</update>
+
+    <!-- 查询相关用户列表 -->
+    <select id="queryUserList" parameterType="User" resultType="User">
+        select * from user WHERE del = 0 and
+            (<if test="loginname!=null ">
+                loginname like concat("%",#{loginname},"%")
+            </if>
+            <if test="email!=null">
+                AND email like concat("%",#{email},"%")
+            </if>
+            <if test="username!=null  and username!='未填写用户名'">
+                AND username like concat("%",#{username},"%")
+            </if>)
+    </select>
+
+
+</mapper>
