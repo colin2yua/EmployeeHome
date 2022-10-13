@@ -26,11 +26,11 @@ public class UserApi {
         return "Hello World";
     }
 
-    @ResponseBody
-    @RequestMapping(value="/hello2",method= RequestMethod.GET)
-    public String hello2() {
-        return "Hello World22222";
-    }
+//    @ResponseBody
+//    @RequestMapping(value="/hello2",method= RequestMethod.GET)
+//    public String hello2() {
+//        return "Hello World22222";
+//    }
 
 
 
