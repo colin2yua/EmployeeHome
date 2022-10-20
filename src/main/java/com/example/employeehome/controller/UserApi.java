@@ -32,8 +32,15 @@ public class UserApi {
         return "Hello World22222";
     }
 
+
     @ResponseBody
-    @RequestMapping(value="/test",method= RequestMethod.GET)
+    @RequestMapping(value="/hello3",method= RequestMethod.GET)
+    public String hello3() {
+        return "test github hook";
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/hello4",method= RequestMethod.GET)
     public String testgithub() {
         return "测试利用github钩子自动部署test1";
     }
