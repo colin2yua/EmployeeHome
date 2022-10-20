@@ -35,7 +35,7 @@ public class UserApi {
     @ResponseBody
     @RequestMapping(value="/testgithub",method= RequestMethod.GET)
     public String testgithub() {
-        return "测试利用github钩子自动部署";
+        return "测试利用github钩子自动部署test1";
     }
 
 
