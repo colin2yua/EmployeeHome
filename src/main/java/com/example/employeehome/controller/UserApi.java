@@ -32,6 +32,13 @@ public class UserApi {
         return "Hello World22222";
     }
 
+    @ResponseBody
+    @RequestMapping(value="/testgithub",method= RequestMethod.GET)
+    public String testgithub() {
+        return "测试github钩子";
+    }
+
+
 
 
 //    @PostMapping(value="/register",produces = "application/json;charset=UTF-8")
